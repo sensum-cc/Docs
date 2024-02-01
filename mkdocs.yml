@@ -1,0 +1,168 @@
+site_name: Sensum Documentation
+site_url: https://docs.sensum.cc
+
+# https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository
+repo_url: https://github.com/sensum-cc/Docs
+repo_name: sensum-cc/Docs
+edit_uri: edit/master/docs/
+
+# https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy/#change-cookie-settings
+copyright: >
+  <span class="twemoji"><img style="filter: invert(0.8)" src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/templates/.icons/material/creative-commons.svg"></span> <a href="https://github.com/sensum-cc/Docs/blob/master/LICENSE">CC-BY-SA-4.0</a>
+
+# Navigation
+# https://www.mkdocs.org/user-guide/configuration/#nav
+#
+nav:
+  - Home:
+      - Home: index.md
+
+  - Getting Started:
+    - not-ready: not-ready.md
+
+  - FAQ & Troubleshooting:
+      - not-ready: not-ready.md
+
+#
+# Theme Settings
+#
+theme:
+  # https://squidfunk.github.io/mkdocs-material/customization/#setup-and-theme-structure
+  name: material
+  custom_dir: overrides
+
+  features:
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#setting-up-navigation
+    - navigation.instant
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.tabs
+    - navigation.sections
+    - navigation.tracking
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+    - navigation.prune
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#table-of-contents
+    - toc.follow
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-suggestions
+    - search.suggest
+    - search.highlight
+    # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+    - content.action.edit
+    - content.action.view
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#configuration
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors
+  palette:
+    - scheme: slate
+      primary: white
+      accent: light-blue
+
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts
+  font:
+    text: Inter
+    code: Chivo Mono
+
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language
+  language: en
+
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons
+  logo: assets/brand/icon.svg
+  favicon: assets/brand/icon.png
+
+  # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+  icon:
+    edit: material/file-edit
+    view: material/file-eye
+
+#
+# Extra Settings
+#
+extra_javascript:
+  - javascript/msdl.js
+
+extra_css:
+  - stylesheets/msdl.v2.css
+  - stylesheets/theme.v2.css
+
+extra:
+  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#generator-notice
+  generator: false
+
+  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links
+  social:
+    - icon: material/earth
+      link: https://sensum.cc
+      name: Sensum Website
+    - icon: fontawesome/brands/discord
+      link: https://discord.sensum.cc
+      name: Sensum on Discord
+    - icon: fontawesome/brands/github
+      link: https://github.com/sensum-cc
+      name: Sensum on GitHub
+
+#
+# Plugins
+#
+plugins:
+  # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search
+  - search:
+      lang: en
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+
+#
+# Python Markdown
+# https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown
+# https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions
+#
+markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/reference/admonitions
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+
+  # https://squidfunk.github.io/mkdocs-material/reference/annotations
+  - abbr
+  - attr_list
+  - md_in_html
+
+  # https://squidfunk.github.io/mkdocs-material/reference/formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+
+  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+  - pymdownx.superfences
+
+  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
+  # https://squidfunk.github.io/mkdocs-material/reference/lists
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
