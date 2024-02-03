@@ -18,7 +18,11 @@ nav:
       - Home: index.md
 
   - Getting Started:
-    - not-ready: not-ready.md
+    - Deposit: getting-started/deposit.md
+    - Adding Proxies: getting-started/adding-proxies.md
+    - Adding Bots: getting-started/adding-bot.md
+    - Allocating Bots And Controlling: getting-started/allocating-bot-and-controlling.md
+    - Jobs: getting-started/jobs.md
 
   - FAQ & Troubleshooting:
       - not-ready: not-ready.md
